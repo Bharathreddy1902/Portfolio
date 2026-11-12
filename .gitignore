@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env*.local
+*.tsbuildinfo
+.vercel
+# originals kept locally (optimized copies live in src/assets and public/resume)
+/Confident Developer in Blue Tech Studio.png
+/rajasekhar_naidu_data_scientist.pdf
