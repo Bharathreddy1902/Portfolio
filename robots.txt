@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://bharathreddy1902.github.io/Portfolio/sitemap.xml
