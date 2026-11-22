@@ -13,7 +13,7 @@ export default function Achievements() {
     <section id="impact" className="relative py-24 md:py-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-electric-400/40 to-transparent" />
       <div className="container-x">
-        <SectionHeading index="06" label="Impact" title="Measured in production, not in slides." intro="Every number below comes from systems I built and shipped." />
+        <SectionHeading index="06" label="Highlights" title="Experience and recognition at a glance." intro="Career highlights, recognition and certifications from my resume." />
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
           {achievements.map((a, i) => (
@@ -37,7 +37,7 @@ export default function Achievements() {
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           <Reveal className="glass rounded-2xl p-6">
             <h3 className="flex items-center gap-2 font-display text-lg text-mist-100">
-              <Trophy className="h-5 w-5 text-amber-300" /> Honors & recognition
+              <Trophy className="h-5 w-5 text-amber-300" /> Achievements & recognition
             </h3>
             <ul className="mt-4 space-y-3">
               {honors.map((h) => (
@@ -50,9 +50,9 @@ export default function Achievements() {
           </Reveal>
           <Reveal delay={0.1} className="glass rounded-2xl p-6">
             <h3 className="flex items-center gap-2 font-display text-lg text-mist-100">
-              <BadgeCheck className="h-5 w-5 text-electric-300" /> Certifications
+              <BadgeCheck className="h-5 w-5 text-electric-300" /> Certifications & internships
             </h3>
-            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            <ul className="mt-4 grid gap-2">
               {certifications.map((c) => (
                 <li key={c} className="rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-mist-200">
                   {c}

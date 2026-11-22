@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionValue } from "framer-motion";
-import { Bot, Cloud, Eye } from "lucide-react";
+import { Code2, Database, Layout } from "lucide-react";
 import { useEffect } from "react";
-import portrait from "@/assets/rajasekhar-portrait.webp";
+import portrait from "@/assets/bharath-portrait.jpg";
 import { profile } from "@/data/profile";
 
 const chips = [
-  { Icon: Bot, label: "LangGraph · RAG", sub: "Agentic AI", pos: "left-[-14%] top-[14%] sm:left-[-18%]", depth: 26, delay: 0.9, float: "0s" },
-  { Icon: Eye, label: "PyTorch · Vision", sub: "6 models live", pos: "right-[-14%] top-[46%] lg:right-[-5%]", depth: 34, delay: 1.05, float: "1.5s" },
-  { Icon: Cloud, label: "AWS · MLOps", sub: "~92% less monitoring", pos: "left-[-8%] bottom-[10%] sm:left-[-12%]", depth: 20, delay: 1.2, float: "3s" },
+  { Icon: Code2, label: "C# · ASP.NET Core", sub: "MVC architecture", pos: "left-[-14%] top-[14%] sm:left-[-18%]", depth: 26, delay: 0.9, float: "0s" },
+  { Icon: Layout, label: "Bootstrap · jQuery", sub: "Responsive UI", pos: "right-[-14%] top-[46%] lg:right-[-5%]", depth: 34, delay: 1.05, float: "1.5s" },
+  { Icon: Database, label: "MySQL · SQL Server", sub: "Query optimization", pos: "left-[-8%] bottom-[10%] sm:left-[-12%]", depth: 20, delay: 1.2, float: "3s" },
 ];
 
 function Chip({ c, mx, my, play }: { c: (typeof chips)[number]; mx: MotionValue<number>; my: MotionValue<number>; play: boolean }) {
@@ -97,7 +97,7 @@ export default function HeroPortrait({ play }: { play: boolean }) {
                     priority
                     placeholder="blur"
                     sizes="(max-width: 640px) 62vw, (max-width: 1024px) 300px, 420px"
-                    className="object-cover object-[50%_22%]"
+                    className="object-cover object-[50%_30%]"
                   />
                 </motion.div>
               </motion.div>
@@ -145,7 +145,7 @@ export default function HeroPortrait({ play }: { play: boolean }) {
             >
               <span className="leading-tight">
                 <span className="block whitespace-nowrap font-display text-sm font-medium text-white">{profile.shortName}</span>
-                <span className="block font-mono text-[10px] text-electric-300">AI / ML Engineer</span>
+                <span className="block font-mono text-[10px] text-electric-300">.NET Full Stack Developer</span>
               </span>
               <span className="hidden items-center gap-1.5 font-mono text-[10px] text-emerald-300 sm:flex">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />

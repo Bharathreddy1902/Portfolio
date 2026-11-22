@@ -8,16 +8,16 @@ const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
-const title = `${profile.shortName} | AI Engineer · ML Engineer · GenAI Engineer`;
+const title = `${profile.shortName} | .NET Full Stack Developer`;
 const description =
-  "AI / ML Engineer building production GenAI agents, LangGraph + RAG chatbots, computer-vision platforms and forecasting systems. ~92% less ML monitoring effort, 82% less inventory waste, 6 vision models in production.";
+  ".NET Full Stack Developer in Bangalore with 2 years of experience building web applications with ASP.NET MVC, ASP.NET Core, C#, MySQL, Bootstrap and jQuery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
-  keywords: ["AI Engineer", "Machine Learning Engineer", "GenAI Engineer", "LangGraph", "RAG", "Agentic AI", "MLOps", "Computer Vision", "Data Scientist", profile.name],
-  authors: [{ name: profile.name, url: profile.linkedin }],
+  keywords: [".NET Developer", "Full Stack Developer", "ASP.NET Core", "ASP.NET MVC", "C#", "MySQL", "SQL Server", "Bootstrap", "jQuery", "Bangalore", profile.name],
+  authors: [{ name: profile.name, url: profile.linkedin || undefined }],
   creator: profile.name,
   alternates: { canonical: "/" },
   openGraph: { type: "profile", url: siteUrl, title, description, siteName: profile.name },
@@ -31,13 +31,13 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
-  jobTitle: "AI Engineer / Data Scientist",
+  jobTitle: ".NET Full Stack Developer",
   worksFor: { "@type": "Organization", name: profile.currentCompany },
-  alumniOf: { "@type": "CollegeOrUniversity", name: "KSRM College of Engineering" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "JNTU College of Engineering, Anantapur" },
   email: `mailto:${profile.email}`,
   url: siteUrl,
-  sameAs: [profile.linkedin, profile.github],
-  knowsAbout: ["Generative AI", "Agentic AI", "LangGraph", "Retrieval-Augmented Generation", "Machine Learning", "Computer Vision", "MLOps", "Demand Forecasting"],
+  sameAs: [profile.linkedin, profile.github].filter(Boolean),
+  knowsAbout: ["C#", "ASP.NET MVC", "ASP.NET Core", "MySQL", "SQL Server", "JavaScript", "jQuery", "Bootstrap", "Web Application Development"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

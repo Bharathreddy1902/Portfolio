@@ -35,8 +35,8 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
-          PAGES_BASE_PATH: /Port---Folio
-          NEXT_PUBLIC_SITE_URL: https://crajasekhar3182.github.io/Port---Folio
+          PAGES_BASE_PATH: /Portfolio
+          NEXT_PUBLIC_SITE_URL: https://bharathreddy1902.github.io/Portfolio
           NEXT_TELEMETRY_DISABLED: "1"
 
       - run: touch out/.nojekyll

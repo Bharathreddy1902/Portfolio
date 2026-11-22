@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Activity, Bot, Database, Eye, GraduationCap, LineChart, Rocket, Server, Workflow, RefreshCcw, BrainCircuit } from "lucide-react";
+import { Bug, ClipboardList, Code2, Database, GraduationCap, Layout, PenTool, Rocket, Server, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { education, profile } from "@/data/profile";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -10,20 +10,18 @@ import Counter from "@/components/ui/Counter";
 import { cn, trackSpotlight } from "@/lib/utils";
 
 const pillars = [
-  { Icon: Bot, title: "Agentic & GenAI Systems", text: "LangGraph state machines, RAG with hybrid reranking, tool-calling agents, prompt caching and Langfuse tracing." },
-  { Icon: Eye, title: "Computer Vision", text: "Config-driven PyTorch platform: EfficientNet / MobileNetV3 fine-tuning, TorchScript, batch and real-time inference." },
-  { Icon: LineChart, title: "Forecasting & Predictive ML", text: "SKU-level demand forecasting, explainable churn models and customer segmentation feeding the CRM." },
-  { Icon: Rocket, title: "MLOps & Deployment", text: "FastAPI / Flask services, Jenkins CI/CD, AWS and GCP deployment, monitoring and human-in-the-loop feedback." },
+  { Icon: Server, title: "Backend Development", text: "Web modules in C# with ASP.NET MVC and ASP.NET Core, following MVC architecture with CRUD / REST-based data operations." },
+  { Icon: Layout, title: "Responsive Frontend", text: "Clean interfaces with HTML5, CSS3 and Bootstrap, plus jQuery / JavaScript for client-side validation and dynamic behavior." },
+  { Icon: Database, title: "Databases & Performance", text: "MySQL and SQL Server: stored procedures, functions, indexing and query optimization for faster data retrieval." },
+  { Icon: ShieldCheck, title: "Clean, Maintainable Code", text: "Scalable, readable codebases, careful debugging and the full SDLC in Agile teams." },
 ];
 
 const lifecycle = [
-  { id: "data", Icon: Database, label: "Data", text: "Python / SQL ETL with automated validation and data-quality checks; Kafka for real-time customer event streaming; Redshift and S3 data layers.", tools: ["SQL", "Kafka", "Redshift", "S3", "Airflow"] },
-  { id: "model", Icon: BrainCircuit, label: "Model", text: "Feature engineering, gradient boosting, time-series, deep-learning vision models and LLM pipelines, with SHAP explainability and error analysis.", tools: ["PyTorch", "LightGBM", "XGBoost", "Prophet", "SHAP"] },
-  { id: "agent", Icon: Workflow, label: "Orchestrate", text: "LangGraph graphs with routing, parallel retrieval, slot filling, confidence gates and strict JSON decision contracts.", tools: ["LangGraph", "RAG", "FAISS", "Redis", "OpenAI"] },
-  { id: "serve", Icon: Server, label: "Serve", text: "REST APIs with defined contracts and model versioning; Gunicorn workers; batch pipelines with worker threads.", tools: ["FastAPI", "Flask", "Gunicorn", "Docker"] },
-  { id: "deploy", Icon: Rocket, label: "Deploy", text: "Jenkins CI/CD; AWS EC2, S3, Lambda, ElastiCache Redis; GCP Vertex AI and Cloud Run.", tools: ["Jenkins", "AWS", "GCP", "GitHub Actions"] },
-  { id: "monitor", Icon: Activity, label: "Monitor", text: "Langfuse node and token tracing, forecast-accuracy dashboards, and an autonomous agent watching production ML jobs.", tools: ["Langfuse", "CloudWatch", "Power BI"] },
-  { id: "feedback", Icon: RefreshCcw, label: "Improve", text: "Human-in-the-loop review apps (FastAPI, Gradio) that turn reviewer corrections into new labelled training data.", tools: ["Gradio", "FastAPI", "MySQL"] },
+  { id: "req", Icon: ClipboardList, label: "Requirements", text: "Gathering requirements and understanding the business workflow, such as how candidates move through background verification.", tools: ["SDLC", "Agile"] },
+  { id: "design", Icon: PenTool, label: "Design", text: "Planning MVC modules, database tables and indexes, and responsive page layouts before writing code.", tools: ["MVC Architecture", "MySQL", "Bootstrap"] },
+  { id: "build", Icon: Code2, label: "Develop", text: "Building controllers, models and views in C#, CRUD operations against MySQL, and jQuery-powered client-side validation.", tools: ["C#", "ASP.NET Core", "jQuery", "Visual Studio"] },
+  { id: "test", Icon: Bug, label: "Test & Debug", text: "Debugging issues end to end and tuning slow SQL queries and indexes to improve data retrieval performance.", tools: ["Debugging", "Query Optimization"] },
+  { id: "deploy", Icon: Rocket, label: "Deploy & Maintain", text: "Shipping releases through Git, then maintaining and improving the application as business needs change.", tools: ["Git", "Maintenance"] },
 ];
 
 export default function About() {
@@ -33,7 +31,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-24 md:py-32">
       <div className="container-x">
-        <SectionHeading index="01" label="About" title="Production AI, from raw data to monitored decisions." />
+        <SectionHeading index="01" label="About" title="Full stack .NET, from database to browser." />
 
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
@@ -48,9 +46,9 @@ export default function About() {
 
             <Reveal delay={0.3} className="mt-8 grid grid-cols-3 gap-3">
               {[
-                { v: 2, s: "+", l: "years in production" },
-                { v: 6, s: "", l: "vision models live" },
-                { v: 5, s: "+", l: "pipelines on my ML package" },
+                { v: 2, s: "", l: "years of experience" },
+                { v: 2, s: "", l: "companies" },
+                { v: 15, s: "+", l: "technologies" },
               ].map((x) => (
                 <div key={x.l} className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
                   <Counter value={x.v} suffix={x.s} className="font-display text-2xl font-semibold text-white" />
@@ -67,7 +65,7 @@ export default function About() {
                 <p className="text-sm font-medium text-mist-100">{education.degree}</p>
                 <p className="mt-0.5 text-sm text-mist-400">{education.school}</p>
                 <p className="mt-1 font-mono text-xs text-electric-300">
-                  {education.period} · GPA {education.gpa}
+                  {education.period}{education.gpa && ` · GPA ${education.gpa}`}
                 </p>
               </div>
             </Reveal>
@@ -94,7 +92,7 @@ export default function About() {
                 <p className="eyebrow">End-to-end ownership</p>
                 <p className="hidden font-mono text-[10px] text-mist-500 sm:block">select a stage</p>
               </div>
-              <div role="tablist" aria-label="ML lifecycle stages" className="relative mt-5 flex flex-wrap gap-2">
+              <div role="tablist" aria-label="Development lifecycle stages" className="relative mt-5 flex flex-wrap gap-2">
                 {lifecycle.map(({ id, Icon, label }, i) => (
                   <button
                     key={id}

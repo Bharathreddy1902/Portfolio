@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowDown, ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -74,14 +74,14 @@ export default function Hero() {
             </span>
             <span className="font-mono">
               {profile.currentTitle} @ {profile.currentCompany}
-              <span className="text-mist-500"> · shipping production AI</span>
+              <span className="text-mist-500"> · {profile.location.split(",")[0]}</span>
             </span>
           </motion.div>
 
           <h1 className="mt-7 font-display text-[clamp(2.6rem,7.5vw,6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-mist-100">
-            <SplitReveal text="Rajasekhar" play={ready} delay={0.1} />
+            <SplitReveal text={profile.firstName} play={ready} delay={0.1} />
             <br />
-            <SplitReveal text="Naidu" play={ready} delay={0.2} wordClassName="text-gradient" />
+            <SplitReveal text={profile.lastName} play={ready} delay={0.2} wordClassName="text-gradient" />
           </h1>
 
           <motion.p {...fade(0.45)} className="mt-6 font-display text-xl text-mist-200 sm:text-2xl md:text-3xl">
@@ -89,7 +89,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.p {...fade(0.6)} className="mt-6 max-w-xl text-base leading-relaxed text-mist-300 md:text-lg">
-            I build <span className="text-mist-100">GenAI agents, LLM chatbots, computer-vision classifiers and forecasting systems</span> end to end, from data pipelines and modelling to APIs, AWS deployment and monitoring.
+            I build <span className="text-mist-100">responsive, secure web applications with ASP.NET MVC, ASP.NET Core and C#</span> end to end, from clean MVC modules and optimized MySQL databases to Bootstrap interfaces with jQuery validation.
           </motion.p>
 
           <motion.div {...fade(0.75)} className="mt-9 flex flex-wrap items-center gap-3">
@@ -104,14 +104,24 @@ export default function Hero() {
             </MagneticButton>
           </motion.div>
 
-          <motion.div {...fade(0.9)} className="mt-8 flex items-center gap-4 font-mono text-xs text-mist-400">
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center gap-1.5 rounded transition hover:text-white">
-              <Github className="h-4 w-4" /> {profile.githubHandle}
+          <motion.div {...fade(0.9)} className="mt-8 flex flex-wrap items-center gap-4 font-mono text-xs text-mist-400">
+            <a href={`mailto:${profile.email}`} className="focus-ring inline-flex items-center gap-1.5 rounded transition hover:text-white">
+              <Mail className="h-4 w-4" /> {profile.email}
             </a>
             <span className="h-3 w-px bg-white/15" />
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center gap-1.5 rounded transition hover:text-white">
-              <Linkedin className="h-4 w-4" /> LinkedIn
+            <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="focus-ring inline-flex items-center gap-1.5 rounded transition hover:text-white">
+              <Phone className="h-4 w-4" /> {profile.phone}
             </a>
+            {profile.github && (
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center gap-1.5 rounded transition hover:text-white">
+                <Github className="h-4 w-4" /> GitHub
+              </a>
+            )}
+            {profile.linkedin && (
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center gap-1.5 rounded transition hover:text-white">
+                <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+            )}
           </motion.div>
         </div>
 

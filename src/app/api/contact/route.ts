@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, fallback: "mailto", error: "Email delivery is not configured on this deployment." }, { status: 503 });
   }
 
-  const to = process.env.CONTACT_TO_EMAIL || "craja62002@gmail.com";
+  const to = process.env.CONTACT_TO_EMAIL || "bbharathreddy930@gmail.com";
   const from = process.env.CONTACT_FROM_EMAIL || "Portfolio <onboarding@resend.dev>";
 
   try {

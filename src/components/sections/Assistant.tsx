@@ -13,7 +13,7 @@ type Msg = { id: number; role: "user" | "bot"; text?: string; results?: Chunk[];
 const GREETING: Msg = {
   id: 0,
   role: "bot",
-  text: "Hi! I can answer questions about Rajasekhar's experience, projects, skills and impact. I search his resume and portfolio content, so every answer comes straight from those sources.",
+  text: "Hi! I can answer questions about Bharath's experience, projects, skills and education. I search his resume and portfolio content, so every answer comes straight from those sources.",
 };
 
 export default function Assistant() {
@@ -88,7 +88,7 @@ export default function Assistant() {
                       ))}
                       {m.notFound && (
                         <p>
-                          I couldn&apos;t find that in the resume. Try asking about GenAI agents, RAG, computer vision, forecasting, MLOps, skills or education. For anything else,{" "}
+                          I couldn&apos;t find that in the resume. Try asking about .NET, ASP.NET Core, databases, frontend, the FADV project, skills or education. For anything else,{" "}
                           <button onClick={() => scrollToId("contact")} className="text-electric-300 underline underline-offset-2 hover:text-white">
                             reach out directly
                           </button>{" "}

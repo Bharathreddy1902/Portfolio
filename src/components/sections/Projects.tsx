@@ -9,7 +9,7 @@ import TiltCard from "@/components/ui/TiltCard";
 import ProjectVisual from "@/components/ui/ProjectVisual";
 import { cn, scrollToId } from "@/lib/utils";
 
-const FILTERS = ["All", "Agentic AI", "RAG / LLM", "MLOps Agent", "Forecasting", "Computer Vision", "Predictive ML"] as const;
+const FILTERS = ["All", "Full Stack Web", "Backend / Database", "Frontend / UI"] as const;
 type Filter = (typeof FILTERS)[number];
 
 export function openArchitecture(id: string) {
@@ -181,7 +181,7 @@ function ProjectDialog({ p, onClose }: { p: Project; onClose: () => void }) {
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-xs text-mist-400">
                 <Lock className="h-3.5 w-3.5" /> Proprietary production system: source and demo are not public
               </span>
-            ) : (
+            ) : profile.github && (
               <a href={profile.github} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm text-mist-100 transition hover:border-electric-400/50">
                 <Github className="h-4 w-4" /> Browse my GitHub
               </a>
@@ -213,18 +213,18 @@ export default function Projects() {
         <SectionHeading
           index="03"
           label="Featured Work"
-          title="AI systems running in production, not notebooks."
-          intro="Case studies from production work at Country Delight, plus personal agentic-AI builds. Open any card for the problem, architecture, my contribution and measured results."
+          title="Real applications, used in production."
+          intro="Work I've built and shipped as a .NET full stack developer. Open the card for the problem, architecture, my contribution and the tech stack."
         />
 
-        <div role="tablist" aria-label="Filter projects by category" className="-mx-4 mb-10 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+        {projects.length > 2 && <div role="tablist" aria-label="Filter projects by category" className="-mx-4 mb-10 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
           {FILTERS.map((f) => (
             <button key={f} role="tab" aria-selected={filter === f} onClick={() => setFilter(f)} className={cn("focus-ring relative shrink-0 rounded-full px-4 py-2 text-sm transition-colors", filter === f ? "text-white" : "text-mist-400 hover:text-mist-100")}>
               {filter === f && <motion.span layoutId="proj-filter" className="absolute inset-0 -z-10 rounded-full border border-electric-400/30 bg-electric-400/10" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
               {f}
             </button>
           ))}
-        </div>
+        </div>}
 
         <motion.div layout className="grid gap-5 md:grid-cols-2 lg:grid-cols-6 [&>*:last-child:nth-child(odd)]:md:col-span-2 [&>*:last-child:nth-child(odd)]:lg:col-span-2">
           <AnimatePresence mode="popLayout">
@@ -239,7 +239,7 @@ export default function Projects() {
                   viewport={{ once: true, margin: "-40px" }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
-                  className="lg:col-span-2"
+                  className={list.length === 1 ? "md:col-span-2 lg:col-span-4 lg:col-start-2" : "lg:col-span-2"}
                 >
                   <ProjectCard p={p} large={large} onOpen={() => setOpenId(p.id)} />
                 </motion.div>

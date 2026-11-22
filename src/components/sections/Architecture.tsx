@@ -172,7 +172,7 @@ export default function Architecture() {
           index="04"
           label="Architecture"
           title="How the systems are actually wired."
-          intro="Interactive diagrams of the production systems and builds above. Hover a component to trace its connections, or click it for details. The moving pulses show data flowing through the pipeline."
+          intro="Interactive diagrams of how my web applications are built. Hover a component to trace its connections, or click it for details. The moving pulses show a request flowing through the stack."
         />
 
         <div role="tablist" aria-label="Select a system" className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">

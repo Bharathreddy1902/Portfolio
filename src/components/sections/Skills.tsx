@@ -8,13 +8,13 @@ import { trackSpotlight } from "@/lib/utils";
 
 const ICONS: Record<string, LucideIcon> = { Code2, Brain, Layers, Sparkles, Workflow, Boxes, Database, Server, Cloud, GitBranch };
 
-const marquee = ["LangGraph", "OpenAI GPT", "RAG", "FAISS", "Qdrant", "PyTorch", "EfficientNet", "LightGBM", "XGBoost", "Prophet", "FastAPI", "Redis", "Langfuse", "AWS", "GCP Vertex AI", "Docker", "Jenkins", "Kafka", "MLflow", "SHAP", "Hugging Face", "MCP"];
+const marquee = ["C#", "ASP.NET Core", "ASP.NET MVC", "MVC Architecture", "JavaScript", "jQuery", "HTML5", "CSS3", "Bootstrap", "MySQL", "SQL Server", "Stored Procedures", "Indexing", "Query Optimization", "Visual Studio", "VS Code", "Git", "Agile", "SDLC"];
 
 export default function Skills() {
   return (
     <section id="skills" className="relative py-24 md:py-32">
       <div className="container-x">
-        <SectionHeading index="05" label="Technical Skills" title="A production-grade AI toolkit." intro="Grouped the way I use them, and limited to tools I have worked with." />
+        <SectionHeading index="05" label="Technical Skills" title="My full stack .NET toolkit." intro="Grouped the way I use them, and limited to tools I have worked with." />
       </div>
 
       {/* floating technology strip */}
@@ -30,7 +30,7 @@ export default function Skills() {
       </div>
 
       <div className="container-x">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {skillGroups.map((g, gi) => {
             const Icon = ICONS[g.icon] ?? Sparkles;
             return (

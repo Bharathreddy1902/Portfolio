@@ -49,7 +49,7 @@ export default function Navbar() {
             <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
           </span>
           <span className="hidden font-mono text-xs text-mist-300 sm:block">
-            rajasekhar<span className="text-electric-400">.ai</span>
+            bharath<span className="text-electric-400">.dev</span>
           </span>
         </a>
 

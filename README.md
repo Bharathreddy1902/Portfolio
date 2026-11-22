@@ -1,8 +1,8 @@
-# Rajasekhar Naidu: AI Engineer Portfolio
+# Bharath Reddy: .NET Full Stack Developer Portfolio
 
-A cinematic, fully animated personal portfolio for an AI / ML / GenAI engineer. It is built with **Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, React Three Fiber (Three.js), GSAP ScrollTrigger, Framer Motion, Lenis and Lucide icons**.
+A cinematic, fully animated personal portfolio for a .NET full stack developer. It is built with **Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, React Three Fiber (Three.js), GSAP ScrollTrigger, Framer Motion, Lenis and Lucide icons**.
 
-All content comes from the resume (`public/resume/Rajasekhar_Naidu_Chinnapothula_Resume.pdf`) and lives in **one place**: `src/data/`.
+All content comes from the resume (`public/resume/Bharath_Reddy_Resume.pdf`) and lives in **one place**: `src/data/`.
 
 ---
 
@@ -15,7 +15,7 @@ All content comes from the resume (`public/resume/Rajasekhar_Naidu_Chinnapothula
 | **About** | Summary, focus areas with pointer spotlight, and an interactive *end-to-end ownership* lifecycle explorer (Data → Model → Orchestrate → Serve → Deploy → Monitor → Improve). |
 | **Experience** | Vertical timeline whose glowing rail fills as you scroll (GSAP scrub). Roles, impact bullets and tech chips. |
 | **Projects** | Filterable 3D-tilt cards with generative SVG visuals per category. Each card opens an accessible case-study dialog covering problem, solution, architecture, contribution, results, tech and links. |
-| **Architecture** | Interactive SVG system diagrams (Ayuh LangGraph agent, MLOps agent, PODClassifier, Demand Engine, MediGuide RAG). Edges draw themselves, pulses show data flow, hover traces connections, and clicking a node shows its details. |
+| **Architecture** | Interactive SVG system diagrams (FADV ASP.NET MVC app, MVC request lifecycle). Edges draw themselves, pulses show data flow, hover traces connections, and clicking a node shows its details. |
 | **Skills** | 10 categories with animated icon cards and a scrolling technology strip. |
 | **Impact** | Animated counters for the real resume metrics, plus honors and certifications. |
 | **Portfolio Assistant** | Chat UI that answers recruiter questions with a client-side BM25 retrieval over the resume content. **No LLM, no backend.** It returns resume passages verbatim with their source and says so in the UI. |
@@ -95,7 +95,7 @@ npm run typecheck
 
 1. Push this folder to a GitHub repository.
 2. Go to [vercel.com/new](https://vercel.com/new) → **Import** the repository. Vercel auto-detects Next.js, so no build settings are needed.
-3. Under **Environment Variables**, add `NEXT_PUBLIC_SITE_URL` (e.g. `https://rajasekhar.vercel.app`) and, optionally, the Resend variables.
+3. Under **Environment Variables**, add `NEXT_PUBLIC_SITE_URL` (e.g. `https://bharath.vercel.app`) and, optionally, the Resend variables.
 4. Click **Deploy**.
 5. Optional: add a custom domain under *Project → Settings → Domains*, then update `NEXT_PUBLIC_SITE_URL` and redeploy.
 
@@ -113,7 +113,7 @@ vercel --prod   # production
 
 - **Text, metrics, projects, skills, links** → `src/data/profile.ts`
 - **Architecture diagrams** → `src/data/architectures.ts` (node `x`/`y` are centers in a ~1200-wide canvas)
-- **Resume PDF** → replace `public/resume/Rajasekhar_Naidu_Chinnapothula_Resume.pdf` (keep the filename or update `profile.resumeUrl`)
+- **Resume PDF** → replace `public/resume/Bharath_Reddy_Resume.pdf` (keep the filename or update `profile.resumeUrl`)
 - **Project links**: each project accepts optional `github` and `demo` fields. They're empty because the resume lists no public repos or demos. Production projects show a "proprietary" notice and personal projects link to the GitHub profile. Add real URLs when available.
 - **Assistant knowledge**: built automatically from `profile.ts`, plus curated answers in `src/lib/assistant.ts`.
 

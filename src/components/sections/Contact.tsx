@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertCircle, ArrowUpRight, Check, CheckCircle2, Copy, Download, Github, Linkedin, Loader2, Mail, Send } from "lucide-react";
+import { AlertCircle, ArrowUpRight, Check, CheckCircle2, Copy, Download, Github, Linkedin, Loader2, Mail, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { profile } from "@/data/profile";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -78,9 +78,10 @@ export default function Contact() {
   };
 
   const channels = [
-    { Icon: Linkedin, label: "LinkedIn", value: "chinnapothula-rajasekhar-naidu", href: profile.linkedin },
+    { Icon: Phone, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` },
+    { Icon: Linkedin, label: "LinkedIn", value: profile.linkedinHandle, href: profile.linkedin },
     { Icon: Github, label: "GitHub", value: profile.githubHandle, href: profile.github },
-  ];
+  ].filter((c) => c.href);
 
   const field = "w-full rounded-xl border bg-ink-900/60 px-4 py-3 text-sm text-mist-100 placeholder:text-mist-500 transition focus:border-electric-400/60 focus:outline-none focus:ring-2 focus:ring-electric-400/20";
 
@@ -88,7 +89,7 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden py-24 md:py-32">
       <div className="pointer-events-none absolute bottom-0 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-electric-600/10 blur-[140px]" />
       <div className="container-x relative">
-        <SectionHeading index="08" label="Contact" title="Let's build production AI together." intro="Open to conversations about AI Engineer, ML Engineer and Applied AI / GenAI roles. The fastest way to reach me is email." />
+        <SectionHeading index="08" label="Contact" title="Let's build something together." intro="Open to .NET Developer, ASP.NET Core Developer and Full Stack Developer roles. The fastest way to reach me is email or phone." />
 
         <div className="grid gap-6 lg:grid-cols-12">
           <div className="flex flex-col gap-4 lg:col-span-5">
@@ -112,7 +113,7 @@ export default function Contact() {
 
             {channels.map(({ Icon, label, value, href }, i) => (
               <Reveal key={label} delay={0.08 * (i + 1)}>
-                <a href={href} target="_blank" rel="noopener noreferrer" className="focus-ring glass group flex items-center gap-4 rounded-2xl p-5 transition hover:border-electric-400/30">
+                <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="focus-ring glass group flex items-center gap-4 rounded-2xl p-5 transition hover:border-electric-400/30">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-electric-500/15 text-electric-300 transition group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -154,7 +155,7 @@ export default function Contact() {
               </div>
               <div className="mt-4">
                 <label htmlFor="c-company" className="mb-1.5 block text-xs text-mist-300">Company / role (optional)</label>
-                <input id="c-company" value={form.company} onChange={set("company")} autoComplete="organization" className={`${field} border-white/10`} placeholder="e.g. Hiring for Senior AI Engineer" />
+                <input id="c-company" value={form.company} onChange={set("company")} autoComplete="organization" className={`${field} border-white/10`} placeholder="e.g. Hiring for .NET Developer" />
               </div>
               <div className="mt-4">
                 <label htmlFor="c-msg" className="mb-1.5 block text-xs text-mist-300">Message *</label>
